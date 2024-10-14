@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1728908347293" clover="3.2.0">
+  <project timestamp="1728908347293" name="All files">
+    <metrics statements="16" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2" elements="19" coveredelements="17" complexity="0" loc="16" ncloc="16" packages="1" files="2" classes="2"/>
+    <file name="circleRadiusFind.js" path="C:\Users\Матюшина\Weather_2024\src\circleRadiusFind.js">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="2" count="3" type="stmt"/>
+      <line num="3" count="3" type="stmt"/>
+      <line num="4" count="3" type="stmt"/>
+      <line num="5" count="3" type="stmt"/>
+      <line num="6" count="3" type="stmt"/>
+    </file>
+    <file name="circleRadiusUI.js" path="C:\Users\Матюшина\Weather_2024\src\circleRadiusUI.js">
+      <metrics statements="11" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <line num="7" count="2" type="stmt"/>
+      <line num="8" count="2" type="stmt"/>
+      <line num="9" count="2" type="stmt"/>
+      <line num="11" count="2" type="stmt"/>
+      <line num="12" count="2" type="stmt"/>
+      <line num="13" count="2" type="stmt"/>
+      <line num="15" count="2" type="stmt"/>
+      <line num="16" count="2" type="stmt"/>
+      <line num="17" count="2" type="stmt"/>
+      <line num="19" count="2" type="stmt"/>
+      <line num="20" count="0" type="stmt"/>
+    </file>
+  </project>
+</coverage>
