@@ -1,21 +1,22 @@
 /* eslint-disable import/no-unresolved */
-import { join, resolve } from 'path';
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-
-export const entry = './src/index.js';
-export const devServer = {
-  static: {
-    directory: join(__dirname, 'public'),
+module.exports = {
+  entry: './src/index.js',
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'public'),
+    },
+    port: 9000,
   },
-  port: 9000,
+  output: {
+    filename: 'main.js',
+    path: path.resolve(__dirname, 'dist'),
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'src/index.html',
+    }),
+  ],
 };
-export const output = {
-  filename: 'main.js',
-  path: resolve(__dirname, 'dist'),
-};
-export const plugins = [
-  new HtmlWebpackPlugin({
-    template: 'src/index.html',
-  }),
-];

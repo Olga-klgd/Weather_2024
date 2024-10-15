@@ -11,9 +11,17 @@
     "dev": "webpack serve --mode development",
     "prepare": "husky"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olga-klgd/weather_2024.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/olga-klgd/weather_2024/issues"
+  },
+  "homepage": "https://github.com/olga-klgd/weather_2024#readme",
   "devDependencies": {
     "@babel/core": "^7.25.8",
     "@babel/preset-env": "^7.25.8",
