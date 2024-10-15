@@ -26,6 +26,6 @@ export default [
     },
   },
   {
-    ignores: ['eslint.config.mjs, babel.config.js'],
+    ignores: ['eslint.config.mjs, babel.config.js, webpack.config.js'],
   },
 ];
