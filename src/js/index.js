@@ -1,5 +1,4 @@
-/* eslint-disable import/no-named-as-default */
-import circleRadiusUI from './circleRadiusUI.js';
+import { weatherUI } from './weatherUI.js';
 
 export default function createContainer(id) {
   const container = document.createElement('div');
@@ -8,4 +7,4 @@ export default function createContainer(id) {
   return container;
 }
 
-circleRadiusUI(createContainer('circleRadiusUI'));
+weatherUI(createContainer('weatherUI'));
