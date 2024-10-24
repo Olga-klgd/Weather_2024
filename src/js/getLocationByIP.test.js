@@ -26,7 +26,23 @@ const mockMyIP = {
   ip: '176.113.114.254',
   country: 'Russia',
 };
-const answerResult = getLocationByIP(mockMyIP);
-it('Проверяем найденный город', () => {
-  expect(answerResult).toBe('Kaliningrad');
+global.fetch = jest.fn().mockResolvedValue(mockMyIP);
+
+describe('getLocationByIP', () => {
+  let result;
+  beforeEach(async () => {
+    global.fetch.mockClear();
+    global.fetch = jest.fn().mockResolvedValue({
+      json: jest.fn().mockResolvedValue(mockMyIP),
+    });
+    result = await getLocationByIP();
+  });
+  it('getLocationByIPP is a function', () => {
+    expect(getLocationByIP).toBeInstanceOf(Function);
+  });
+
+  it('getLocationByIP returns promise', async () => {
+    expect(fetch).toHaveBeenCalledWith('https://get.geojs.io/v1/ip/geo.json');
+    expect(result).toEqual('Kaliningrad');
+  });
 });

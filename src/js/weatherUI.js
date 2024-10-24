@@ -16,12 +16,12 @@ export default async function weatherUI(el) {
   const ownCity = await getLocationByIP();
 
   const resultWeather = document.createElement('resultWeather');
-  resultWeather.innerHTML = `<h2>Прогноз погоды ${ownCity}</h2>`;
+  resultWeather.innerHTML = '<h2>Прогноз погоды</h2>';
   el.append(resultWeather);
 
   let findWeatherCity = await findWeather(ownCity);
   const resultWeatherCheck = document.createElement('resultWeatherCheck');
-  resultWeatherCheck.innerHTML = `Погода в ${findWeatherCity}`;
+  resultWeatherCheck.innerHTML = `${findWeatherCity}`;
   el.append(resultWeatherCheck);
 
   const input = document.createElement('input');
@@ -32,9 +32,9 @@ export default async function weatherUI(el) {
   button.innerHTML = 'Посмотрим на погоду';
   el.append(button);
   // Выводим список поисков
-
+  loadFromHistoryCity();
   const historyContainer = document.createElement('historyContainter');
-  const listForContainer = loadFromHistoryCity('keyWeather');
+  let listForContainer = loadFromHistoryCity('keyWeather');
 
   historyContainer.innerHTML = '';
   listForContainer.forEach((city) => {
@@ -44,7 +44,7 @@ export default async function weatherUI(el) {
     historyContainer.appendChild(div);
   });
   el.append(historyContainer);
-  loadFromHistoryCity();
+  // loadFromHistoryCity();
 
   // const historyContainer = document.createElement('historyContainter');
   // const listForContainer = loadFromHistoryCity('keyWeather');
@@ -62,6 +62,7 @@ export default async function weatherUI(el) {
       resultWeatherCheck.innerHTML = `${findWeatherCity}`;
       input.value = '';
       saveToHistory(newCity);
+      listForContainer = loadFromHistoryCity('keyWeather');
     }
     // const allCity = loadFromHistoryCity('keyWeather');
     // сonsole.log('allcity', allCity);
