@@ -4,7 +4,7 @@ import { findWeather } from './findWeather.js';
 import { showWeather } from './showWeather.js';
 import { saveToLocalStorage } from './saveToLocalStorage.js';
 import { loadFromLocalStorage } from './loadFromLocalStorage.js';
-import { renderListCities } from './renderListCities.js';
+// import { renderListCities } from './renderListCities.js';
 import { renderContainerByCity } from './renderContainerByCity.js';
 
 export default async function weatherUI(el) {
@@ -40,11 +40,11 @@ export default async function weatherUI(el) {
     'containerFoundedCities',
   );
   el.append(containerFoundedCities);
-  const listFoundedCities = loadFromLocalStorage('keyWeather');
-  containerFoundedCities.innerHTML = `<div>
-  <h2>Список прошлых поисков</h2>
-  ${renderListCities(listFoundedCities)}
-  </div>`;
+  // const listFoundedCities = loadFromLocalStorage('keyWeather');
+  // containerFoundedCities.innerHTML = `<div>
+  // <h2>Список прошлых поисков</h2>
+  // ${renderListCities(listFoundedCities)}
+  // </div>`;
 
   // const check = document.createElement('check');
   // el.append(check);
@@ -69,11 +69,12 @@ export default async function weatherUI(el) {
       div.innerHTML = city;
       div.addEventListener('click', async () => {
         const renderWeather2 = await renderContainerByCity(city);
-        check1.innerHTML = `Проверяем контейнер${city} ${renderWeather2}`;
+        weatherShowContainer.innerHTML = `Проверяем контейнер${city} ${renderWeather2}`;
       });
       containerFoundedCities.appendChild(div);
     });
-    el.append(containerFoundedCities);
+
+    // el.append(containerFoundedCities);
 
     //   containerFoundedCities.innerHTML = `<div>
     // <h2>Список прошлых поисков</h2>
@@ -89,6 +90,20 @@ export default async function weatherUI(el) {
     // const listRenderCity = renderListCities(cityFromLocalStorage);
     // check.innerHTML = `${listRenderCity}`;
   });
+
+  // export function containerForClickableCities(cityFromLocalStorage) {
+  //   //  const cityFromLocalStorage = loadFromLocalStorage('keyWeather');
+  //   // eslint-disable-next-line no-shadow
+  //   cityFromLocalStorage.forEach((city) => {
+  //     const div = document.createElement('div');
+  //     div.innerHTML = city;
+  //     div.addEventListener('click', async () => {
+  //       const renderWeather = await renderContainerByCity(city);
+  //       check1.innerHTML = `Проверяем контейнер${city} ${renderWeather}`;
+  //     });
+  //     containerFoundedCities.appendChild(div);
+  //   });
+  // }
 
   // const check = document.createElement('check');
   // check.innerHTML = `<div>${newCity}</div>`;
