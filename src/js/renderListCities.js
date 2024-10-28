@@ -1,8 +1,7 @@
+/* eslint-disable no-return-await */
 /* eslint-disable linebreak-style */
 // import { findWeather } from './findWeather.js';
 // import { renderContainerByCity } from './renderContainerByCity.js';
-
-// import { renderContainerByCity } from './renderContainerByCity';
 
 // import { showWeather } from './showWeather.js';
 
@@ -15,13 +14,21 @@ export function renderListCities(cityFromLocalStorage) {
   //   check1.textContent = 'неизвестный город';
   //   el.append(check1);
   cityFromLocalStorage.forEach((city) => {
-    const cityDiv = document.createElement('div');
-    cityDiv.innerText = city;
-    // cityDiv.addEventListener('click', async () => {
+    const div = document.createElement('div');
+    div.innerText = `Город ${city} `;
+    // div.addEventListener('click', () => console.log(city));
     //   const weather = await renderContainerByCity(city);
-    //   cityDiv.innerText = weather;
-    // });
-    containerFoundedCities.appendChild(cityDiv);
+    //   div.innerHTML =`Город ${city} `;
+    //   console.log(11);
+    // })
+    // div.onclick = function () {
+    //   const weartherDiv = document.createElement('div');
+    //   weartherDiv.innerHTML = '';
+    //   const renderWeather = renderContainerByCity(city);
+    //   weartherDiv.innerHTML = renderWeather;
+    // };
+    // div.addEventListener('click', )
+    containerFoundedCities.appendChild(div);
     // cityDiv.addEventListener('click', async () => {
     //   const weatherJson = await findWeather(city);
     //   showWeather(weatherJson);
