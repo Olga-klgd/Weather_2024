@@ -24,7 +24,7 @@ export default async function weatherUI(el) {
   const weatherShowContainer = document.createElement('weatherShowContainer');
   // const renderWeather = showWeather(weatherJson);
   weatherShowContainer.innerHTML = `${showWeather(weatherJson)}`;
-  weatherShowContainer.innerHTML = `${renderWeather1}`;
+  // weatherShowContainer.innerHTML = `${renderWeather1}`;
   el.append(weatherShowContainer);
 
   // В каком городе ищем погоду?
@@ -51,6 +51,7 @@ export default async function weatherUI(el) {
   el.append(check);
   let cityFromLocalStorage = loadFromLocalStorage('keyWeather');
   renderListCities(cityFromLocalStorage);
+  check.innerHTML = `Получаем ${renderListCities(cityFromLocalStorage)}`;
 
   button.addEventListener('click', async () => {
     // Получаем погоду для города из поля ввода
@@ -62,11 +63,13 @@ export default async function weatherUI(el) {
     }
     // Сохраняем город в LocalStorage
     saveToLocalStorage(сity);
-    // Получаем информацию из LocalStorage для обновления списка городов
     cityFromLocalStorage = loadFromLocalStorage('keyWeather');
-    const check2 = document.createElement('check2');
-    check2.innerText = `список ${renderListCities(cityFromLocalStorage)}`;
-    el.append(check2);
+    renderListCities(cityFromLocalStorage);
+    // Получаем информацию из LocalStorage для обновления списка городов
+    // cityFromLocalStorage = loadFromLocalStorage('keyWeather');
+    // const check2 = document.createElement('check2');
+    // check2.innerText = `список ${renderListCities(cityFromLocalStorage)}`;
+    // el.append(check2);
     //  cityFromLocalStorage = loadFromLocalStorage('keyWeather');
     // check.innerHTML = `${cityFromLocalStorage}`;
     // const listRenderCity = renderListCities(cityFromLocalStorage);
