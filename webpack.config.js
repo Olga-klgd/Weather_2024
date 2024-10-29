@@ -1,27 +1,12 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import { join, resolve } from 'path';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import CopyWebpackPlugin from 'copy-webpack-plugin';
+/* eslint-disable import/no-unresolved */
+const path = require('path');
 
-export const entry = './src/js/index.js';
-export const devServer = {
-  static: {
-    directory: join(__dirname, 'src/style'),
+module.exports = {
+  mode: 'development',
+  entry: './src/js/indexedDB.js',
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
   },
-  compress: true,
-  port: 9000,
 };
-export const output = {
-  path: resolve(__dirname, 'dist'),
-  filename: 'index.js',
-};
-export const plugins = [
-  new HtmlWebpackPlugin({
-    template: 'src/index.html',
-  }),
-  new CopyWebpackPlugin({
-    patterns: [
-      { from: resolve(__dirname, 'src/style'), to: 'style' },
-    ],
-  }),
-];
