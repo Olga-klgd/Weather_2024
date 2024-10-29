@@ -1,3 +1,4 @@
+// import './styles.css';
 import weatherUI from './weatherUI.js';
 
 export default function createContainer(id) {
