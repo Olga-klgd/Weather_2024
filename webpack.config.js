@@ -1,30 +1,27 @@
 /* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable import/no-unresolved */
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+import { join, resolve } from 'path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
-module.exports = {
-  entry: './src/js/index.js',
-  devServer: {
-    static: {
-      directory: path.join(__dirname, 'dist'),
-    },
-    port: 9000,
+export const entry = './src/js/index.js';
+export const devServer = {
+  static: {
+    directory: join(__dirname, 'src/style'),
   },
-  output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
-  },
-  module: {
-    rules: [{ test: /\.txt$/, use: 'raw-loader' }],
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/index.html',
-    }),
-  ],
-  experiments: {
-    topLevelAwait: true,
-  },
-  mode: 'development',
+  compress: true,
+  port: 9000,
 };
+export const output = {
+  path: resolve(__dirname, 'dist'),
+  filename: 'index.js',
+};
+export const plugins = [
+  new HtmlWebpackPlugin({
+    template: 'src/index.html',
+  }),
+  new CopyWebpackPlugin({
+    patterns: [
+      { from: resolve(__dirname, 'src/style'), to: 'style' },
+    ],
+  }),
+];
