@@ -2,15 +2,15 @@
   "name": "weather_2024",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-    "scripts": {
-    "test": "jest",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest --coverage",
     "lint": "prettier --check . && eslint .",
     "lint:fix": "prettier --write . && eslint . --fix",
-    "build": "webpack  --mode production",
-    "dev": "webpack serve --mode development",
-    "start": "webpack serve",
-    "prepare": "husky"
+    "prepare": "husky install",
+    "start": "webpack-dev-server --mode development",
+    "build": "webpack --mode production",
+    "watch": "webpack --watch"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,8 @@
     "@testing-library/react": "^16.0.1",
     "@types/jest": "^29.5.13",
     "babel-jest": "^29.7.0",
+    "browser-sync": "^2.29.3",
+    "browser-sync-webpack-plugin": "^2.3.0",
     "copy-webpack-plugin": "^12.0.2",
     "css-loader": "^7.1.2",
     "eslint": "^8.57.1",
