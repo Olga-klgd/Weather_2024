@@ -1,0 +1,6 @@
+.show_weather {
+  display: flex;
+  justify-content: space-between;
+  background: #ffffff;
+  border-radius: 6px;
+}
