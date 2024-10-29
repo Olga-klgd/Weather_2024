@@ -37,9 +37,6 @@ describe('getLocationByIP', () => {
     });
     result = await getLocationByIP();
   });
-  it('getLocationByIPP is a function', () => {
-    expect(getLocationByIP).toBeInstanceOf(Function);
-  });
 
   it('getLocationByIP returns promise', async () => {
     expect(fetch).toHaveBeenCalledWith('https://get.geojs.io/v1/ip/geo.json');

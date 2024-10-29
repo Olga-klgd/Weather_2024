@@ -25,7 +25,7 @@ describe('showWeather', () => {
     expect(result).toContain('Калининград, Россия');
   });
 
-  it('Показывается температура', () => {
+  it('Показывает температуру', () => {
     const result = showWeather(testData);
     expect(result).toContain('Температура: 15°C');
   });
