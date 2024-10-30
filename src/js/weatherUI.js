@@ -1,6 +1,5 @@
 /* eslint-disable no-shadow */
 /* eslint-disable linebreak-style */
-// import './styles.css';
 import { getLocationByIP } from './getLocationByIP.js';
 import { findWeather } from './findWeather.js';
 import { showWeather } from './showWeather.js';
@@ -11,34 +10,41 @@ import { renderContainerByCity } from './renderContainerByCity.js';
 export default async function weatherUI(el) {
   const header = document.createElement('header');
   header.innerHTML = '<h2>Прогноз погоды</h2>';
+  header.classList.add('header');
+  el.append(header);
   // Определим город пользователя по IP
   const city = await getLocationByIP();
   //  Найдем погоду в городе пользователя
   let weatherJson = await findWeather(city);
   //  Отрисуем погоду в городе пользователя
   const weatherShowContainer = document.createElement('weatherShowContainer');
-
   weatherShowContainer.innerHTML = `${showWeather(weatherJson)}`;
   el.append(weatherShowContainer);
+  weatherShowContainer.classList.add('card');
 
   // В каком городе ищем погоду?
   const input = document.createElement('input');
   input.placeholder = 'Введите город';
   el.append(input);
+  input.classList.add('search-field');
 
   const button = document.createElement('button');
   button.innerHTML = 'Посмотрим, что с погодой';
   el.append(button);
+  button.classList.add('button');
 
   const containerFoundedCities = document.createElement(
     'containerFoundedCities',
   );
   el.append(containerFoundedCities);
+  containerFoundedCities.classList.add('styled-list');
 
-  button.addEventListener('click', async () => {
+  button.addEventListener('click', async (event) => {
     // Получаем погоду для города из поля ввода
+    // event.preventDefault();
     containerFoundedCities.innerHTML = '<h2>Ранее вы искали</h2>';
     const сity = input.value.trim();
+    event.preventDefault();
     if (сity) {
       weatherJson = await findWeather(сity);
       weatherShowContainer.innerHTML = `${showWeather(weatherJson)}`;
@@ -49,13 +55,14 @@ export default async function weatherUI(el) {
     const cityFromLocalStorage = loadFromLocalStorage('keyWeather');
 
     cityFromLocalStorage.forEach((city) => {
-      const div = document.createElement('div');
-      div.innerHTML = city;
-      div.addEventListener('click', async () => {
+      const li = document.createElement('li');
+      li.innerHTML = city;
+      li.addEventListener('click', async (event) => {
+        event.preventDefault();
         const renderWeather2 = await renderContainerByCity(city);
         weatherShowContainer.innerHTML = `${renderWeather2}`;
       });
-      containerFoundedCities.appendChild(div);
+      containerFoundedCities.appendChild(li);
     });
   });
 }

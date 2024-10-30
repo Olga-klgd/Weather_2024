@@ -1,4 +1,4 @@
 node_modules
 .eslintcache
-webpack-demo
 coverage
+dist
