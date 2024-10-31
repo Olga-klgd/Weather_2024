@@ -1,16 +1,16 @@
 name: GitHub Pages
 
-on:
+on: 
   pull_request:
-
+permissions:
+  contents: write
 jobs:
-  deploy:
+  deploy-to-gh-pages:
     runs-on: ubuntu-22.04
-    permissions:
-      contents: write
     steps:
-      - uses: actions/checkout@v3
-
+      - name: Checkout
+        uses: actions/checkout@v2
+        
       - name: Install dependencies
         run: |
           npm install
