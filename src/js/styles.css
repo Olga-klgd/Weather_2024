@@ -10,12 +10,14 @@ body {
 /* Стили для карточки */
 .card {
   display: flex;
-  background-color: #ebe3a3; /* Желтый цвет карточки */
-  border: 2px solid #ffc107; /* Окантовка карточки */
-  border-radius: 8px; /* Закругленные углы */
+  width: 350px;
+  height: 430px;
+  background-color: #ebe3a3;
+  border: 2px solid #ffc107;
+  border-radius: 8px;
   padding: 20px;
-  margin-bottom: 20px; /* Отступ снизу */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для объемности */
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   color: rgb(145, 6, 6);
   justify-content: center;
 }

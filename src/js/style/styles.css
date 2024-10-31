@@ -1,5 +1,5 @@
 body {
-  display: flex;
+  /* display: flex; */
   background-color: #f0f0f0; /* Светло-серый цвет фона */
   font-family: Arial, sans-serif; /* Шрифт */
 }
@@ -9,7 +9,11 @@ body {
 
 /* Стили для карточки */
 .card {
-  display: flex;
+  width: 300px; /* Фиксированная ширина 300 пикселей */
+  height: 100px; /* Фиксированная высота 100 пикселей */
+  position: fixed; /* Фиксированное позиционирование */
+  bottom: 0; /* Расположение внизу страницы */
+  right: 0; /* Расположение справа страницы */
   background-color: #ebe3a3; /* Желтый цвет карточки */
   border: 2px solid #ffc107; /* Окантовка карточки */
   border-radius: 8px; /* Закругленные углы */

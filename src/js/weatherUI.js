@@ -12,15 +12,17 @@ export default async function weatherUI(el) {
   header.innerHTML = '<h2>Прогноз погоды</h2>';
   header.classList.add('header');
   el.append(header);
+
+  const weatherShowContainer = document.createElement('weatherShowContainer');
+  weatherShowContainer.classList.add('card');
+  el.append(weatherShowContainer);
+
   // Определим город пользователя по IP
   const city = await getLocationByIP();
   //  Найдем погоду в городе пользователя
   let weatherJson = await findWeather(city);
   //  Отрисуем погоду в городе пользователя
-  const weatherShowContainer = document.createElement('weatherShowContainer');
   weatherShowContainer.innerHTML = `${showWeather(weatherJson)}`;
-  el.append(weatherShowContainer);
-  weatherShowContainer.classList.add('card');
 
   // В каком городе ищем погоду?
   const input = document.createElement('input');
