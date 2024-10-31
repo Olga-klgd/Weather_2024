@@ -41,10 +41,9 @@ export default async function weatherUI(el) {
 
   button.addEventListener('click', async (event) => {
     // Получаем погоду для города из поля ввода
-    // event.preventDefault();
+    event.preventDefault();
     containerFoundedCities.innerHTML = '<h2>Ранее вы искали</h2>';
     const сity = input.value.trim();
-    event.preventDefault();
     if (сity) {
       weatherJson = await findWeather(сity);
       weatherShowContainer.innerHTML = `${showWeather(weatherJson)}`;
@@ -55,7 +54,7 @@ export default async function weatherUI(el) {
     const cityFromLocalStorage = loadFromLocalStorage('keyWeather');
 
     cityFromLocalStorage.forEach((city) => {
-      const li = document.createElement('li');
+      const li = document.createElement('div');
       li.innerHTML = city;
       li.addEventListener('click', async (event) => {
         event.preventDefault();

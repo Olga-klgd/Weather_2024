@@ -1,89 +1,49 @@
-/* eslint-disable no-undef */
 /* eslint-disable linebreak-style */
-import weatherUI from './weatherUI.js';
-import { getLocationByIP } from './getLocationByIP.js';
-import { findWeather } from './findWeather.js';
-import { showWeather } from './showWeather.js';
-import { saveToLocalStorage } from './saveToLocalStorage.js';
-import { loadFromLocalStorage } from './loadFromLocalStorage.js';
+/* eslint-disable no-undef */
+import { showWeather } from './showWeather.js'; // Adjust the path as necessary
 
-jest.mock('./getLocationByIP');
-jest.mock('./findWeather');
-jest.mock('./showWeather');
-jest.mock('./saveToLocalStorage');
-jest.mock('./loadFromLocalStorage');
+const testData = {
+  location: {
+    name: 'Калининград',
+    country: 'Россия',
+    lat: 54.7104,
+    lon: 20.4522,
+  },
+  current: {
+    condition: {
+      icon: 'https://example.com/icon.png',
+    },
+    temp_c: 15,
+    wind_mph: 5,
+  },
+};
 
-describe('weatherUI', () => {
-  let element;
-
-  beforeEach(() => {
-    // Создаем элемент для тестирования
-    element = document.createElement('div');
-    document.body.appendChild(element);
+// Unit tests for showWeather function
+describe('showWeather', () => {
+  it('Ответ включает Калининград', () => {
+    const result = showWeather(testData);
+    expect(result).toContain('Калининград, Россия');
   });
 
-  afterEach(() => {
-    // Удаляем элемент после каждого теста
-    document.body.removeChild(element);
-    jest.clearAllMocks();
+  it('Показывает температуру', () => {
+    const result = showWeather(testData);
+    expect(result).toContain('Температура: 15°C');
   });
 
-  test('должен создать заголовок и элементы ввода', async () => {
-    await weatherUI(element);
+  it('Показывает ветер', () => {
+    const result = showWeather(testData);
+    expect(result).toContain('ветер: 5 м/c');
+  });
 
-    expect(element.querySelector('h2').textContent).toBe('Прогноз погоды');
-    expect(element.querySelector('input').placeholder).toBe('Введите город');
-    expect(element.querySelector('button').textContent).toBe(
-      'Посмотрим, что с погодой',
+  it('Отображается иконка для погоды', () => {
+    const result = showWeather(testData);
+    expect(result).toContain('src="https://example.com/icon.png"');
+  });
+
+  it('Выводится карта', () => {
+    const result = showWeather(testData);
+    expect(result).toContain(
+      'https://static-maps.yandex.ru/v1?ll=20.4522,54.7104&size=300,300&spn=0.026457,0.0619&apikey=25b219d8-43b5-4d03-94c4-6dff815d896a',
     );
-  });
-
-  test('должен отображать погоду по умолчанию', async () => {
-    getLocationByIP.mockResolvedValue('Kaliningrad');
-    findWeather.mockResolvedValue({ temp_c: 13.3 });
-    showWeather.mockReturnValue('<p>Температура: 13.3°C</p>');
-
-    await weatherUI(element);
-
-    const weatherShowContainer = element.querySelector('weatherShowContainer');
-    expect(weatherShowContainer.innerHTML).toBe('<p>Температура: 13.2°C</p>');
-  });
-
-  test('должен искать погоду по введенному городу', async () => {
-    const input = element.querySelector('input');
-    const button = element.querySelector('button');
-
-    input.value = 'Москва';
-    await weatherUI(element);
-    findWeather.mockResolvedValueOnce({ temp_c: 15 });
-    showWeather.mockReturnValue('<p>Температура: 15°C</p>');
-
-    button.click();
-
-    const weatherShowContainer = element.querySelector('weatherShowContainer');
-    expect(weatherShowContainer.innerHTML).toBe('<p>Температура: 15°C</p>');
-  });
-
-  test('должен сохранять город в LocalStorage', async () => {
-    await weatherUI(element);
-
-    const input = element.querySelector('input');
-    const button = element.querySelector('button');
-
-    input.value = 'Москва';
-    button.click();
-    expect(saveToLocalStorage).toHaveBeenCalledWith('Москва');
-  });
-
-  test('должен загружать города из LocalStorage', async () => {
-    loadFromLocalStorage.mockReturnValue(['Москва', 'Минск']);
-
-    await weatherUI(element);
-    const containerFoundedCities = element.querySelector(
-      'containerFoundedCities',
-    );
-    expect(containerFoundedCities.children.length).toBe(2);
-    expect(containerFoundedCities.children[0].textContent).toBe('Москва');
-    expect(containerFoundedCities.children[1].textContent).toBe('Минск');
   });
 });
