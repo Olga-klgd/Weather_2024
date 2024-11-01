@@ -1,49 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1730451143690" clover="3.2.0">
-  <project timestamp="1730451143690" name="All files">
-    <metrics statements="25" coveredstatements="25" conditionals="8" coveredconditionals="8" methods="6" coveredmethods="6" elements="39" coveredelements="39" complexity="0" loc="25" ncloc="25" packages="1" files="6" classes="6"/>
-    <file name="findWeather.js" path="C:\Users\Матюшина\Weather_2024\src\js\findWeather.js">
-      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <line num="5" count="2" type="stmt"/>
-      <line num="11" count="1" type="stmt"/>
-      <line num="14" count="1" type="stmt"/>
-      <line num="15" count="1" type="stmt"/>
-    </file>
-    <file name="getLocationByIP.js" path="C:\Users\Матюшина\Weather_2024\src\js\getLocationByIP.js">
-      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <line num="5" count="1" type="stmt"/>
-      <line num="6" count="1" type="stmt"/>
-      <line num="7" count="1" type="stmt"/>
-      <line num="8" count="1" type="stmt"/>
-      <line num="9" count="1" type="stmt"/>
-    </file>
-    <file name="loadFromLocalStorage.js" path="C:\Users\Матюшина\Weather_2024\src\js\loadFromLocalStorage.js">
-      <metrics statements="1" coveredstatements="1" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-      <line num="3" count="2" type="cond" truecount="2" falsecount="0"/>
-    </file>
-    <file name="renderContainerByCity.js" path="C:\Users\Матюшина\Weather_2024\src\js\renderContainerByCity.js">
-      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <line num="7" count="1" type="stmt"/>
-      <line num="8" count="1" type="stmt"/>
-      <line num="9" count="1" type="stmt"/>
-      <line num="10" count="1" type="stmt"/>
-      <line num="11" count="1" type="stmt"/>
-    </file>
-    <file name="saveToLocalStorage.js" path="C:\Users\Матюшина\Weather_2024\src\js\saveToLocalStorage.js">
-      <metrics statements="7" coveredstatements="7" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
-      <line num="2" count="1" type="stmt"/>
-      <line num="4" count="18" type="cond" truecount="2" falsecount="0"/>
-      <line num="5" count="18" type="cond" truecount="2" falsecount="0"/>
-      <line num="6" count="17" type="stmt"/>
-      <line num="7" count="17" type="cond" truecount="2" falsecount="0"/>
-      <line num="8" count="5" type="stmt"/>
-      <line num="10" count="17" type="stmt"/>
-    </file>
+<coverage generated="1730453597784" clover="3.2.0">
+  <project timestamp="1730453597784" name="All files">
+    <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1" elements="4" coveredelements="4" complexity="0" loc="3" ncloc="3" packages="1" files="1" classes="1"/>
     <file name="showWeather.js" path="C:\Users\Матюшина\Weather_2024\src\js\showWeather.js">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <line num="3" count="3" type="stmt"/>
-      <line num="5" count="10" type="stmt"/>
-      <line num="12" count="10" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="5" count="5" type="stmt"/>
+      <line num="12" count="5" type="stmt"/>
     </file>
   </project>
 </coverage>
