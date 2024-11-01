@@ -27,4 +27,35 @@ ________________________________________________________________________________
 
 Сборка проекта осуществляется с помощью Webpack.
 
+## Структура проекта:
+> src
+  >>index.html
+   
+  >>js
+ 
+     index.js
+     
+     weatherUI.js
+     
+     getLocationByIP.js
+     
+     findWeather.js 
+
+     showWeather.js
+     
+     renderConteinerbyCity.js
+
+     saveToLocalStorage.js
+
+     loadFromLocalStorage.js
+
+     
+     
+ 
+  
+
+ 
+ 
+
+
  
