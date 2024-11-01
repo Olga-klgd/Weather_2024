@@ -1,6 +1,5 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable no-undef */
-// loadFromLocalStorage.js
 import { loadFromLocalStorage } from './loadFromLocalStorage.js';
 
 describe('loadFromLocalStorage', () => {
