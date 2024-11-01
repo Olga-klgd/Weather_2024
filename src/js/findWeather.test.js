@@ -1,15 +1,13 @@
 /* eslint-disable no-undef */
-/* eslint-disable linebreak-style */
 import { findWeather } from './findWeather';
 
 describe('findWeather', () => {
   beforeEach(() => {
-    // Мокаем fetch
     global.fetch = jest.fn();
   });
 
   afterEach(() => {
-    jest.clearAllMocks(); // Очищаем моки после каждого теста
+    jest.clearAllMocks();
   });
 
   it('должен вернуть данные о погоде для указанного города', async () => {
@@ -29,7 +27,6 @@ describe('findWeather', () => {
       },
     };
 
-    // Настраиваем мок для fetch
     global.fetch.mockResolvedValueOnce({
       json: jest.fn().mockResolvedValueOnce(mockWeatherData),
     });

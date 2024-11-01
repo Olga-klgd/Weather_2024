@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 // Определяем по городу погоду и отрисовываем
 import { findWeather } from './findWeather.js';
 import { showWeather } from './showWeather.js';

@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 // Отрисовывем погоду из json
 const mapApiKey = '25b219d8-43b5-4d03-94c4-6dff815d896a';
 export function showWeather(data) {

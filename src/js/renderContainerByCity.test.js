@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 /* eslint-disable no-undef */
 import { renderContainerByCity } from './renderContainerByCity.js'; // Adjust the import according to your file structure
 import { findWeather } from './findWeather.js';
