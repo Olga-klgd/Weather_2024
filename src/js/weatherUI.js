@@ -47,15 +47,19 @@ export default async function weatherUI(el) {
     event.preventDefault();
     containerFoundedCities.innerHTML = '<h2>Ранее вы искали</h2>';
     const сity = input.value.trim();
-    if (сity) {
-      weatherJson = await findWeather(сity);
+    weatherJson = await findWeather(сity);
+    if (!weatherJson.error) {
       weatherShowContainer.innerHTML = `${showWeather(weatherJson)}`;
       input.value = '';
+      // Сохраняем город в LocalStorage
+      saveToLocalStorage(сity);
+    } else {
+      weatherShowContainer.innerHTML = '<h2 align = "center">Вы что-то не то ввели. <br>Попробуйте еще</h2> ';
+      input.value = '';
     }
-    // Сохраняем город в LocalStorage
-    saveToLocalStorage(сity);
     const cityFromLocalStorage = loadFromLocalStorage('keyWeather');
 
+    // Отрисовываем список поисков
     cityFromLocalStorage.forEach((city) => {
       const li = document.createElement('div');
       li.innerHTML = city;
