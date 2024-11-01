@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 /* eslint-disable no-undef */
 import { getLocationByIP } from './getLocationByIP.js';
 
