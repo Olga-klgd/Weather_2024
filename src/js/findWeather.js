@@ -7,7 +7,6 @@ const weatherApiKey = 'ff67773d96384e45a29113456242210';
 export async function findWeather(city) {
   // const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${openWeatherApiKey}&units=metric&lang=ru`);
   // const weatherJson = await res.json();
-  // showWeather(weatherJson);
 
   const res = await fetch(
     `https://api.weatherapi.com/v1/current.json?key=${weatherApiKey}&q=${city}`,

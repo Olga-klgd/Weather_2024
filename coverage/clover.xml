@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1730383113751" clover="3.2.0">
-  <project timestamp="1730383113752" name="All files">
+<coverage generated="1730451143690" clover="3.2.0">
+  <project timestamp="1730451143690" name="All files">
     <metrics statements="25" coveredstatements="25" conditionals="8" coveredconditionals="8" methods="6" coveredmethods="6" elements="39" coveredelements="39" complexity="0" loc="25" ncloc="25" packages="1" files="6" classes="6"/>
     <file name="findWeather.js" path="C:\Users\Матюшина\Weather_2024\src\js\findWeather.js">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="5" count="2" type="stmt"/>
-      <line num="12" count="1" type="stmt"/>
+      <line num="11" count="1" type="stmt"/>
+      <line num="14" count="1" type="stmt"/>
       <line num="15" count="1" type="stmt"/>
-      <line num="16" count="1" type="stmt"/>
     </file>
     <file name="getLocationByIP.js" path="C:\Users\Матюшина\Weather_2024\src\js\getLocationByIP.js">
       <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>

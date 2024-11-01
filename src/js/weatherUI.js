@@ -6,7 +6,6 @@ import { showWeather } from './showWeather.js';
 import { saveToLocalStorage } from './saveToLocalStorage.js';
 import { loadFromLocalStorage } from './loadFromLocalStorage.js';
 import { renderContainerByCity } from './renderContainerByCity.js';
-import { getTransliterationMyCity } from './getTransliterationMyCity.js';
 
 export default async function weatherUI(el) {
   const header = document.createElement('header');
@@ -20,10 +19,9 @@ export default async function weatherUI(el) {
 
   // Определим город пользователя по IP
   const city = await getLocationByIP();
-  // Преобразуем латиницу в кириллицу
-  const cityKirilica = getTransliterationMyCity(city);
+
   //  Найдем погоду в городе пользователя
-  let weatherJson = await findWeather(cityKirilica);
+  let weatherJson = await findWeather(city);
   //  Отрисуем погоду в городе пользователя
   weatherShowContainer.innerHTML = `${showWeather(weatherJson)}`;
 
