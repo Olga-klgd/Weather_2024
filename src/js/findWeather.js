@@ -1,6 +1,3 @@
-/* eslint-disable linebreak-style */
-// import { getLocationByIP } from './getLocationbyIP.js';
-
 const weatherApiKey = 'ff67773d96384e45a29113456242210';
 
 export async function findWeather(city) {

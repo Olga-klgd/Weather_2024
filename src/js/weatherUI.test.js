@@ -1,6 +1,6 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable no-undef */
-import { showWeather } from './showWeather.js'; // Adjust the path as necessary
+import { showWeather } from './showWeather.js';
 
 const testData = {
   location: {
