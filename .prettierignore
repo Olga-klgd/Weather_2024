@@ -1,5 +1,4 @@
 webpack.config.js
 .vscode/settings.json
-.github/workflows/
 eslint.config.mjs
 dist
