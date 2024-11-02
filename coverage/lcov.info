@@ -4,7 +4,7 @@ FN:3,findWeather
 FNF:1
 FNH:1
 FNDA:1,findWeather
-DA:1,2
+DA:2,2
 DA:4,1
 DA:7,1
 DA:8,1
@@ -87,10 +87,10 @@ SF:src\js\showWeather.js
 FN:3,showWeather
 FNF:1
 FNH:1
-FNDA:7,showWeather
+FNDA:4,showWeather
 DA:2,3
-DA:4,7
-DA:13,7
+DA:4,4
+DA:13,4
 LF:3
 LH:3
 BRF:0

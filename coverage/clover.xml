@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1730538899322" clover="3.2.0">
-  <project timestamp="1730538899322" name="All files">
+<coverage generated="1730553858162" clover="3.2.0">
+  <project timestamp="1730553858162" name="All files">
     <metrics statements="24" coveredstatements="24" conditionals="8" coveredconditionals="8" methods="6" coveredmethods="6" elements="38" coveredelements="38" complexity="0" loc="24" ncloc="24" packages="1" files="6" classes="6"/>
     <file name="findWeather.js" path="C:\Users\Матюшина\Weather_2024\src\js\findWeather.js">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <line num="1" count="2" type="stmt"/>
+      <line num="2" count="2" type="stmt"/>
       <line num="4" count="1" type="stmt"/>
       <line num="7" count="1" type="stmt"/>
       <line num="8" count="1" type="stmt"/>
@@ -41,8 +41,8 @@
     <file name="showWeather.js" path="C:\Users\Матюшина\Weather_2024\src\js\showWeather.js">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="2" count="3" type="stmt"/>
-      <line num="4" count="7" type="stmt"/>
-      <line num="13" count="7" type="stmt"/>
+      <line num="4" count="4" type="stmt"/>
+      <line num="13" count="4" type="stmt"/>
     </file>
   </project>
 </coverage>
