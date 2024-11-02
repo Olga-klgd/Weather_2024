@@ -1,6 +1,5 @@
-/* eslint-disable linebreak-style */
 /* eslint-disable no-undef */
-import { showWeather } from './showWeather.js'; // Adjust the path as necessary
+import { showWeather } from './showWeather.js';
 
 const testData = {
   location: {
@@ -43,7 +42,7 @@ describe('showWeather', () => {
   it('Выводится карта', () => {
     const result = showWeather(testData);
     expect(result).toContain(
-      'https://static-maps.yandex.ru/v1?ll=20.4522,54.7104&size=300,300&spn=0.026457,0.0619&apikey=25b219d8-43b5-4d03-94c4-6dff815d896a',
+      'https://static-maps.yandex.ru/v1?ll=20.4522,54.7104&size=350,350&spn=0.026457,0.0619&apikey=25b219d8-43b5-4d03-94c4-6dff815d896a',
     );
   });
 });
