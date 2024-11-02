@@ -52,18 +52,15 @@ body {
 }
 @media (max-width: 768px) {
   .card {
-    width: 250px;
-    height: 350px;
+    width: 330px;
+    height: 400px;
   }
   .card img {
-    max-width: 230px;
+    max-width: 280px;
   }
   .card h2 {
     margin: 0;
     font-size: 18px;
-  }
-  .search-field {
-    width: 250px;
   }
   .block {
     display: flex;
