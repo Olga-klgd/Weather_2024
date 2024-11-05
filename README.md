@@ -45,7 +45,7 @@ ________________________________________________________________________________
 
      showWeather.js
      
-     renderConteinerbyCity.js
+     renderContainerbyCity.js
 
      saveToLocalStorage.js
 
