@@ -1,0 +1,27 @@
+name: GitHub Pages
+
+on: 
+  pull_request:
+permissions:
+  contents: write
+jobs:
+  deploy-to-gh-pages:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: Install dependencies
+        run: |
+          npm install
+
+      - name: Build
+        #   Шаги сборки
+        run: |
+          npm run build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
